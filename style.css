@@ -100,6 +100,8 @@ body {
 }
 
 .calculation {
+    width: 100%;
+    max-width: 42.875rem;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -137,6 +139,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+    column-gap: 1.5rem;
 }
 
 .calculation__measure {
@@ -227,6 +230,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    column-gap: 2.5rem;
 }
 
 .lifestyle__icon {
@@ -276,9 +280,8 @@ body {
 
 .limitations__list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
+    display: grid;
+    gap: 1rem;
 }
 
 .limitations__list--item {
@@ -318,4 +321,81 @@ body {
     clip: rect(0 0 0 0);
     white-space: nowrap;
     border: 0;
+}
+
+
+@media screen and (min-width: 40rem) {
+    .calculation__measures {
+        flex-direction: row;
+    }
+
+    .calculation__output {
+        border-bottom-right-radius: 999px;
+        border-top-right-radius: 999px;
+    }
+
+    .info {
+        margin-inline-start: -6rem;
+        display: flex;
+        align-items: center;
+        column-gap: 4.5rem;
+    }
+
+    .info__image {
+        max-width: 435px;
+    }
+
+    .info__content {
+        padding: 0;
+        padding-inline-end: 2.625rem;
+    }
+
+    .lifestyle {
+        padding-block: 3.125rem;
+        padding-inline: 2.5rem;
+    }
+
+    .lifestyle__list--item {
+        flex-direction: row;
+    }
+
+    .limitations__list {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "gender gender age age"
+        "muscle muscle pregnancy pregnancy"
+        "...    race   race      ...";
+    }
+
+    .gender {
+        grid-area: gender;
+    }
+
+    .age {
+        grid-area: age;
+    }
+
+    .muscle {
+        grid-area: muscle;
+    }
+
+    .pregnancy {
+        grid-area: pregnancy;
+    }
+
+    .race {
+        grid-area: race;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .limitations__list {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-areas:
+        "...       ...       ...       ...       ...  gender gender gender gender ...   "
+        "...       ...       age       age       age  age    muscle muscle muscle muscle"
+        "pregnancy pregnancy pregnancy pregnancy race race   race   race   ...    ...   ";
+    }
+
+    
 }
