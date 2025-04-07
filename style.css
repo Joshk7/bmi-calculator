@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray-300: #ACC1DE;
+    --gray-500: #5E6E85;
+    --blue-100: #E1E7FE;
+    --blue-300: #B3D3F1;
+    --blue-500: #345FF6;
+    --blue-900: #253347;
+    --gradient-one: linear-gradient(to right, #D6FCFE, #D6E6FE);
+    --text-preset-one: 600 4rem/1.1 "Inter";
+    --text-preset-two: 600 3rem/1.1 "Inter";
+    --text-preset-three: 600 2rem/1.1 "Inter";
+    --text-preset-four: 600 1.5rem/1.2 "Inter";
+    --text-preset-five: 600 1.25rem/1.2 "Inter";
+    --text-preset-six-semibold: 600 1rem/1.5 "Inter";
+    --text-preset-six: normal 1rem/1.5 "Inter";
+    --text-preset-seven-bold: bold 0.875rem/1.5 "Inter";
+    --text-preset-seven: normal 0.875rem/1.5 "Inter"; 
+}
+
+body {
+    font-family: "Inter";
+}
