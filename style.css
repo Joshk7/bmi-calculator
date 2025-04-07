@@ -42,7 +42,8 @@ h6 {
     --blue-300: #b3d3f1;
     --blue-500: #345ff6;
     --blue-900: #253347;
-    --gradient-one: linear-gradient(to right, #d6fcfe, #d6e6fe);
+    --gradient-one: linear-gradient(to right, #ffffff, #D6FCFE);
+    --gradient-two: linear-gradient(to right, rgb(214, 252, 254, 0.15), rgb(214, 230, 254, 0.15));
     --text-preset-one: 600 4rem/1.1 "Inter";
     --text-preset-two: 600 3rem/1.1 "Inter";
     --text-preset-three: 600 2rem/1.1 "Inter";
@@ -64,6 +65,16 @@ body {
     flex-direction: column;
     align-items: center;
     row-gap: 2rem;
+}
+
+.calculator__gradient {
+    position: absolute;
+    z-index: -1;
+    height: 640px;
+    width: 100%;
+    background: var(--gradient-one);
+    border-bottom-left-radius: 2.1875rem;
+    border-bottom-right-radius: 2.1875rem;
 }
 
 .logo {
@@ -95,6 +106,7 @@ body {
     row-gap: 1.5rem;
     background: var(--white);
     border-radius: 1rem;
+    box-shadow: 1rem 2rem 3.5rem 0 #8FAECF40;
 }
 
 .calculation__header {
@@ -201,6 +213,7 @@ body {
 
 .lifestyle {
     padding: 3rem 1.5rem;
+    background: var(--gradient-two);
 }
 
 .lifestyle__list {
@@ -275,6 +288,7 @@ body {
     row-gap: 1rem;
     background: var(--white);
     border-radius: 1rem;
+    box-shadow: 1rem 2rem 3.5rem 0 #8FAECF40;
 }
 
 .limitations__title {
