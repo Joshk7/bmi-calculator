@@ -59,6 +59,11 @@ body {
     font-family: "Inter";
 }
 
+main {
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
 .calculator {
     max-width: 1160px;
     margin-inline: auto;
@@ -205,15 +210,24 @@ body {
 }
 
 .info {
+    max-width: 1160px;
     padding-block-end: 4rem;
 }
 
 .info__content {
     padding-block-start: 3rem;
     padding-inline: 1.5rem;
+    max-width: 465px;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+}
+
+.info__content--curve {
+    display: none;
+    max-height: 12.5rem;
+    align-self: flex-end;
+    margin-inline-end: 2rem;
 }
 
 .info__header {
@@ -227,11 +241,15 @@ body {
 }
 
 .lifestyle {
+    max-width: 1160px;
+    margin-inline: auto;
     padding: 3rem 1.5rem;
     background: var(--gradient-two);
 }
 
 .lifestyle__list {
+    max-width: 1160px;
+    margin-inline: auto;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -266,7 +284,10 @@ body {
 }
 
 .limitations {
+    position: relative;
     padding: 5.125rem 1.875rem 6rem 1.875rem;
+    max-width: 1160px;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
     row-gap: 3.5rem;
@@ -288,6 +309,13 @@ body {
     font: var(--text-preset-six);
     color: var(--gray-500);
     text-align: center;
+}
+
+.limitations__info--curve {
+    display: none;
+    max-height: 7.625rem;
+    align-self: flex-start;
+    margin-inline-start: 10rem;
 }
 
 .limitations__list {
@@ -405,6 +433,10 @@ body {
         align-self: flex-start;
     }
 
+    .calculator {
+        padding-block: 5.5rem;
+    }
+
     .calculator__gradient {
         height: 737px;
     }
@@ -412,6 +444,7 @@ body {
     .calculator__wrapper {
         flex-direction: row;
         column-gap: 2rem;
+        margin-block-end: 4rem;
     }
 
     .calculator__description {
@@ -426,13 +459,64 @@ body {
         text-align: start;
     }
 
+    .info {
+        margin-inline: auto;
+        column-gap: 8.125rem;
+    }
+
+    .info__content {
+        padding-inline-end: 0;
+        align-self: flex-start;
+    }
+
+    .info__content--curve {
+        display: block;
+    }
+
+    .info__image {
+        max-width: 564px;
+    }
+
+    .lifestyle__list {
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .lifestyle__list--item {
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+
+    .limitations__info {
+        max-width: min(34rem, 37vw);   
+        position: absolute;
+    }
+
+    .limitations__info--header {
+        text-align: start;
+    }
+
+    .limitations__info--description {
+        text-align: start;
+    }
+
+    .limitations__info--curve {
+        display: block;
+    }
+
     .limitations__list {
-        align-self: flex-end;
+        position: absolute;
+        right: 2rem;
         max-width: 60rem;
         grid-template-columns: repeat(10, 1fr);
         grid-template-areas:
         "...       ...       ...       ...       ...  gender gender gender gender ...   "
         "...       ...       age       age       age  age    muscle muscle muscle muscle"
         "pregnancy pregnancy pregnancy pregnancy race race   race   race   ...    ...   ";
+    }
+
+    .limitations__list--item {
+        max-width: 365px;
     }
 }
