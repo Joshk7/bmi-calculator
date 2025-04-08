@@ -15,6 +15,8 @@ const pound = document.getElementById("pound");
 const empty = document.getElementById("empty");
 const active = document.getElementById("active");
 const result = document.getElementById("result");
+const healthStatus = document.getElementById("status");
+const range = document.getElementById("range");
 
 let isMetric = true;
 
@@ -51,15 +53,35 @@ const renderOutput = (isActive) => {
     }
 };
 
+const healthState = (bmi) => {
+    if (bmi < 18.5) {
+        return "underweight";
+    } else if (bmi < 25) {
+        return "healthy weight";
+    } else if (bmi < 30) {
+        return "overweight";
+    } else {
+        return "obese";
+    }
+};
+
 const handleCalculationFormInput = (e) => {
     if (isMetric) {
         const centimeterValue = centimeter.value;
         const kilogramValue = kilogram.value;
         console.log(centimeterValue, kilogramValue);
         if (centimeterValue > 0 && kilogramValue > 0) {
-            const totalMeters = centimeterValue * 0.01;
-            const metricBMI = kilogramValue / (totalMeters * totalMeters);
-            // change output first
+            const totalMeters = Number(centimeterValue) * 0.01;
+            const metricBMI =
+                Math.round((kilogramValue / (totalMeters * totalMeters)) * 10) /
+                10;
+            const from = Math.round(18.5 * Math.pow(totalMeters, 2) * 10) / 10;
+            const to = Math.round(24.9 * Math.pow(totalMeters, 2) * 10) / 10;
+
+            // change output
+            result.innerText = metricBMI;
+            healthStatus.innerText = healthState(metricBMI);
+            range.innerText = `${from}kgs to ${to}kgs`;
             renderOutput(true);
         } else {
             renderOutput(false);
@@ -76,10 +98,22 @@ const handleCalculationFormInput = (e) => {
             stoneValue > 0 &&
             poundValue > 0
         ) {
-            const totalPounds = (14 * stoneValue) + poundValue;
-            const totalInches = (12 * feetValue) + inchValue;
-            const imperialBMI = 703 * (totalPounds / (totalInches * totalInches));
-            // change output first
+            const totalPounds = 14 * Number(stoneValue) + Number(poundValue);
+            const totalInches = 12 * Number(feetValue) + Number(inchValue);
+            const imperialBMI =
+                Math.round(
+                    703 * (totalPounds / (totalInches * totalInches)) * 10
+                ) / 10;
+
+            const from =
+                Math.round((18.5 / 703) * Math.pow(totalInches, 2) * 10) / 10;
+            const to =
+                Math.round((24.9 / 703) * Math.pow(totalInches, 2) * 10) / 10;
+
+            // change output
+            result.innerText = imperialBMI;
+            healthStatus.innerText = healthState(imperialBMI);
+            range.innerText = `${from}lbs to ${to}lbs`;
             renderOutput(true);
         } else {
             renderOutput(false);

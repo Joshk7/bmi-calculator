@@ -218,11 +218,7 @@ main {
     font: var(--text-preset-seven);
 }
 
-.empty {
-    display: none;
-}
-
-/* .active {
+/* .empty {
     display: none;
 } */
 
@@ -251,6 +247,10 @@ main {
     max-width: 360px;
     font: var(--text-preset-seven);
     flex: 1;
+}
+
+.active {
+    display: none;
 }
 
 .range {
