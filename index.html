@@ -41,7 +41,7 @@
                             evaluate your overall health and well-being.
                         </p>
                     </div>
-                    <form class="calculation">
+                    <form id="calculation" class="calculation">
                         <span class="calculation__header">
                             Enter your details below
                         </span>
@@ -52,6 +52,7 @@
                                     id="metric"
                                     type="radio"
                                     name="button"
+                                    checked
                                 />
                                 Metric
                             </label>
@@ -65,19 +66,22 @@
                                 Imperial
                             </label>
                         </div>
-                        <div class="calculation__measures">
+                        <div
+                            id="metric-measures"
+                            class="calculation__measures metric"
+                        >
                             <div class="calculation__measure">
                                 <label
                                     class="calculation__measure--label"
-                                    for="height"
+                                    for="centimeter"
                                     >Height</label
                                 >
                                 <div class="calculation__wrapper">
                                     <input
                                         class="calculation__input"
-                                        id="height"
+                                        id="centimeter"
                                         type="number"
-                                        value="0"
+                                        placeholder="0"
                                     />
                                     <span class="calculation__unit"> cm </span>
                                 </div>
@@ -85,28 +89,100 @@
                             <div class="calculation__measure">
                                 <label
                                     class="calculation__measure--label"
-                                    for="weight"
+                                    for="kilogram"
                                     >Weight</label
                                 >
                                 <div class="calculation__wrapper">
                                     <input
                                         class="calculation__input"
-                                        id="weight"
+                                        id="kilogram"
                                         type="number"
-                                        value="0"
+                                        placeholder="0"
                                     />
                                     <span class="calculation__unit"> kg </span>
                                 </div>
                             </div>
                         </div>
+                        <div
+                            id="imperial-measures"
+                            class="calculation__measures imperial"
+                        >
+                            <div class="calculation__measure">
+                                <label
+                                    class="calculation__measure--label"
+                                    for="feet"
+                                    >Height</label
+                                >
+                                <div class="calculation__content">
+                                    <div class="calculation__wrapper">
+                                        <input
+                                            class="calculation__input"
+                                            id="feet"
+                                            type="number"
+                                            placeholder="0"
+                                        />
+                                        <span class="calculation__unit">
+                                            ft
+                                        </span>
+                                    </div>
+                                    <div class="calculation__wrapper">
+                                        <input
+                                            class="calculation__input"
+                                            id="inch"
+                                            type="number"
+                                            placeholder="0"
+                                        />
+                                        <span class="calculation__unit">
+                                            in
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calculation__measure">
+                                <label
+                                    class="calculation__measure--label"
+                                    for="stone"
+                                    >Weight</label
+                                >
+                                <div class="calculation__content">
+                                    <div class="calculation__wrapper">
+                                        <input
+                                            class="calculation__input"
+                                            id="stone"
+                                            type="number"
+                                            placeholder="0"
+                                        />
+                                        <span class="calculation__unit">
+                                            st
+                                        </span>
+                                    </div>
+                                    <div class="calculation__wrapper">
+                                        <input
+                                            class="calculation__input"
+                                            id="pound"
+                                            type="number"
+                                            placeholder="0"
+                                        />
+                                        <span class="calculation__unit">
+                                            lb
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <output class="calculation__output">
-                            <span class="calculation__output--welcome">
-                                Welcome!
-                            </span>
-                            <p class="calculation__output--description">
-                                Enter your height and weight and you'll see your
-                                BMI result here
-                            </p>
+                            <div id="empty" class="empty">
+                                <span class="empty__welcome">
+                                    Welcome!
+                                </span>
+                                <p class="empty__description">
+                                    Enter your height and weight and you'll see your
+                                    BMI result here
+                                </p>
+                            </div>
+                            <div id="active" class="active">
+                                This is your BMI!
+                            </div>
                         </output>
                     </form>
                 </div>
@@ -119,7 +195,11 @@
                     alt="Man eating with chopsticks"
                 />
                 <div class="info__content">
-                    <img class="info__content--curve" src="/assets/images/pattern-curved-line-left.svg" alt="">
+                    <img
+                        class="info__content--curve"
+                        src="/assets/images/pattern-curved-line-left.svg"
+                        alt=""
+                    />
                     <h2 class="info__header">What your BMI result means</h2>
                     <p class="info__description">
                         A BMI range of 18.5 to 24.9 is considered a 'healthy
@@ -207,9 +287,12 @@
                         in certain cases, the measurement may not be beneficial
                         to use.
                     </p>
-                    <img class="limitations__info--curve" src="/assets/images/pattern-curved-line-right.svg" alt="">
+                    <img
+                        class="limitations__info--curve"
+                        src="/assets/images/pattern-curved-line-right.svg"
+                        alt=""
+                    />
                 </div>
-
 
                 <ul class="limitations__list">
                     <li class="limitations__list--item gender">

@@ -170,6 +170,11 @@ main {
     color: var(--gray-500);
 }
 
+.calculation__content {
+    display: flex;
+    column-gap: 1.5rem;
+}
+
 .calculation__wrapper {
     position: relative;
 }
@@ -196,17 +201,24 @@ main {
     background: var(--blue-500);
     color: var(--white);
     border-radius: 1rem;
+}
+
+.empty {
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
 }
 
-.calculation__output--welcome {
+.empty__welcome {
     font: var(--text-preset-four);
 }
 
-.calculation__output--description {
+.empty__description {
     font: var(--text-preset-seven);
+}
+
+.active {
+    display: none;
 }
 
 .info {
@@ -363,10 +375,22 @@ main {
     border: 0;
 }
 
+/* .metric {
+    display: none;
+} */
+
+.imperial {
+    display: none;
+}
+
 
 @media screen and (min-width: 40rem) {
     .calculation__measures {
         flex-direction: row;
+    }
+
+    .imperial {
+        flex-direction: column;
     }
 
     .calculation__output {
