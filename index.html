@@ -172,16 +172,33 @@
                         </div>
                         <output class="calculation__output">
                             <div id="empty" class="empty">
-                                <span class="empty__welcome">
-                                    Welcome!
-                                </span>
+                                <span class="empty__welcome"> Welcome! </span>
                                 <p class="empty__description">
-                                    Enter your height and weight and you'll see your
-                                    BMI result here
+                                    Enter your height and weight and you'll see
+                                    your BMI result here
                                 </p>
                             </div>
                             <div id="active" class="active">
-                                This is your BMI!
+                                <div class="active__result">
+                                    <span class="active__result--description">
+                                        Your BMI is...
+                                    </span>
+                                    <span
+                                        id="result"
+                                        class="active__result--value"
+                                    >
+                                        22.0
+                                    </span>
+                                </div>
+                                <p class="active__description">
+                                    Your BMI suggests you're a
+                                    <span id="status" class="status"
+                                        >a healthy weight</span
+                                    >. Your ideal weight is between
+                                    <span id="range" class="range"
+                                        >9st 6lbs - 12st 10lbs.</span
+                                    >
+                                </p>
                             </div>
                         </output>
                     </form>

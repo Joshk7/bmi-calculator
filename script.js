@@ -8,12 +8,13 @@ const kilogram = document.getElementById("kilogram");
 
 const imperialMeasures = document.getElementById("imperial-measures");
 const feet = document.getElementById("feet");
-const inch = document.getElementById("inches");
+const inch = document.getElementById("inch");
 const stone = document.getElementById("stone");
 const pound = document.getElementById("pound");
 
 const empty = document.getElementById("empty");
 const active = document.getElementById("active");
+const result = document.getElementById("result");
 
 let isMetric = true;
 
@@ -56,6 +57,8 @@ const handleCalculationFormInput = (e) => {
         const kilogramValue = kilogram.value;
         console.log(centimeterValue, kilogramValue);
         if (centimeterValue > 0 && kilogramValue > 0) {
+            const totalMeters = centimeterValue * 0.01;
+            const metricBMI = kilogramValue / (totalMeters * totalMeters);
             // change output first
             renderOutput(true);
         } else {
@@ -73,6 +76,9 @@ const handleCalculationFormInput = (e) => {
             stoneValue > 0 &&
             poundValue > 0
         ) {
+            const totalPounds = (14 * stoneValue) + poundValue;
+            const totalInches = (12 * feetValue) + inchValue;
+            const imperialBMI = 703 * (totalPounds / (totalInches * totalInches));
             // change output first
             renderOutput(true);
         } else {
