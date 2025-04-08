@@ -60,6 +60,8 @@ body {
 }
 
 .calculator {
+    max-width: 1160px;
+    margin-inline: auto;
     padding: 2rem 1.5rem 4rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -72,6 +74,7 @@ body {
     z-index: -1;
     height: 640px;
     width: 100%;
+    max-width: 1002px;
     background: var(--gradient-one);
     border-bottom-left-radius: 2.1875rem;
     border-bottom-right-radius: 2.1875rem;
@@ -81,10 +84,18 @@ body {
     width: 2.5rem;
 }
 
+.calculator__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2.5rem;
+}
+
 .calculator__info {
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
+    flex: 1;
 }
 
 .calculator__header {
@@ -109,6 +120,7 @@ body {
     background: var(--white);
     border-radius: 1rem;
     box-shadow: 1rem 2rem 3.5rem 0 #8FAECF40;
+    flex: 1;
 }
 
 .calculation__header {
@@ -389,13 +401,38 @@ body {
 }
 
 @media screen and (min-width: 64rem) {
+    .logo {
+        align-self: flex-start;
+    }
+
+    .calculator__gradient {
+        height: 737px;
+    }
+
+    .calculator__wrapper {
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .calculator__description {
+        max-width: 465px;
+    }
+
+    .calculator__header {
+        text-align: start;
+    }
+
+    .calculator__description {
+        text-align: start;
+    }
+
     .limitations__list {
+        align-self: flex-end;
+        max-width: 60rem;
         grid-template-columns: repeat(10, 1fr);
         grid-template-areas:
         "...       ...       ...       ...       ...  gender gender gender gender ...   "
         "...       ...       age       age       age  age    muscle muscle muscle muscle"
         "pregnancy pregnancy pregnancy pregnancy race race   race   race   ...    ...   ";
     }
-
-    
 }

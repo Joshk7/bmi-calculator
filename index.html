@@ -28,86 +28,88 @@
                     src="/assets/images/logo.svg"
                     alt="Circular logo"
                 />
-                <div class="calculator__info">
-                    <h1 class="calculator__header">
-                        Body Mass Index Calculator
-                    </h1>
-                    <p class="calculator__description">
-                        Better understand your weight in relation to your height
-                        using our body mass index (BM) calculator. While BMI is
-                        not the sole determinant of a healthy weight, it offers
-                        a valuable starting point to evaluate your overall
-                        health and well-being.
-                    </p>
-                </div>
-                <form class="calculation">
-                    <span class="calculation__header">
-                        Enter your details below
-                    </span>
-                    <div class="calculation__buttons">
-                        <label class="calculation__item" for="metric">
-                            <input
-                                class="calculation__button"
-                                id="metric"
-                                type="radio"
-                                name="button"
-                            />
-                            Metric
-                        </label>
-                        <label class="calculation__item" for="imperial">
-                            <input
-                                class="calculation__button"
-                                id="imperial"
-                                type="radio"
-                                name="button"
-                            />
-                            Imperial
-                        </label>
-                    </div>
-                    <div class="calculation__measures">
-                        <div class="calculation__measure">
-                            <label
-                                class="calculation__measure--label"
-                                for="height"
-                                >Height</label
-                            >
-                            <div class="calculation__wrapper">
-                                <input
-                                    class="calculation__input"
-                                    id="height"
-                                    type="number"
-                                    value="0"
-                                />
-                                <span class="calculation__unit"> cm </span>
-                            </div>
-                        </div>
-                        <div class="calculation__measure">
-                            <label
-                                class="calculation__measure--label"
-                                for="weight"
-                                >Weight</label
-                            >
-                            <div class="calculation__wrapper">
-                                <input
-                                    class="calculation__input"
-                                    id="weight"
-                                    type="number"
-                                    value="0"
-                                />
-                                <span class="calculation__unit"> kg </span>
-                            </div>
-                        </div>
-                    </div>
-                    <output class="calculation__output">
-                        <span class="calculation__output--welcome">
-                            Welcome!
-                        </span>
-                        <p class="calculation__output--description">
-                            Enter your height and weight and you'll see your BMI
-                            result here
+                <div class="calculator__wrapper">
+                    <div class="calculator__info">
+                        <h1 class="calculator__header">
+                            Body Mass Index Calculator
+                        </h1>
+                        <p class="calculator__description">
+                            Better understand your weight in relation to your
+                            height using our body mass index (BM) calculator.
+                            While BMI is not the sole determinant of a healthy
+                            weight, it offers a valuable starting point to
+                            evaluate your overall health and well-being.
                         </p>
-                    </output>
-                </form>
+                    </div>
+                    <form class="calculation">
+                        <span class="calculation__header">
+                            Enter your details below
+                        </span>
+                        <div class="calculation__buttons">
+                            <label class="calculation__item" for="metric">
+                                <input
+                                    class="calculation__button"
+                                    id="metric"
+                                    type="radio"
+                                    name="button"
+                                />
+                                Metric
+                            </label>
+                            <label class="calculation__item" for="imperial">
+                                <input
+                                    class="calculation__button"
+                                    id="imperial"
+                                    type="radio"
+                                    name="button"
+                                />
+                                Imperial
+                            </label>
+                        </div>
+                        <div class="calculation__measures">
+                            <div class="calculation__measure">
+                                <label
+                                    class="calculation__measure--label"
+                                    for="height"
+                                    >Height</label
+                                >
+                                <div class="calculation__wrapper">
+                                    <input
+                                        class="calculation__input"
+                                        id="height"
+                                        type="number"
+                                        value="0"
+                                    />
+                                    <span class="calculation__unit"> cm </span>
+                                </div>
+                            </div>
+                            <div class="calculation__measure">
+                                <label
+                                    class="calculation__measure--label"
+                                    for="weight"
+                                    >Weight</label
+                                >
+                                <div class="calculation__wrapper">
+                                    <input
+                                        class="calculation__input"
+                                        id="weight"
+                                        type="number"
+                                        value="0"
+                                    />
+                                    <span class="calculation__unit"> kg </span>
+                                </div>
+                            </div>
+                        </div>
+                        <output class="calculation__output">
+                            <span class="calculation__output--welcome">
+                                Welcome!
+                            </span>
+                            <p class="calculation__output--description">
+                                Enter your height and weight and you'll see your
+                                BMI result here
+                            </p>
+                        </output>
+                    </form>
+                </div>
             </section>
 
             <section class="info">
