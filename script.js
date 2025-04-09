@@ -18,6 +18,8 @@ const result = document.getElementById("result");
 const healthStatus = document.getElementById("status");
 const range = document.getElementById("range");
 
+const measureInputs = calculationForm.querySelectorAll("input[type=number]");
+
 let isMetric = true;
 
 const renderMeasures = (metric) => {
@@ -121,6 +123,15 @@ const handleCalculationFormInput = (e) => {
     }
 };
 
+const handleMeasureInput = (e) => {
+    if (e.key === "-") {
+        e.preventDefault();
+    }
+};
+
 metricButton.addEventListener("click", handleMetricButton);
 imperialButton.addEventListener("click", handleImperialButton);
 calculationForm.addEventListener("input", handleCalculationFormInput);
+measureInputs.forEach((input) => {
+    input.addEventListener("keydown", handleMeasureInput);
+});

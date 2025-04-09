@@ -42,8 +42,12 @@ h6 {
     --blue-300: #b3d3f1;
     --blue-500: #345ff6;
     --blue-900: #253347;
-    --gradient-one: linear-gradient(to right, #ffffff, #D6FCFE);
-    --gradient-two: linear-gradient(to right, rgb(214, 252, 254, 0.15), rgb(214, 230, 254, 0.15));
+    --gradient-one: linear-gradient(to right, #ffffff, #d6fcfe);
+    --gradient-two: linear-gradient(
+        to right,
+        rgb(214, 252, 254, 0.15),
+        rgb(214, 230, 254, 0.15)
+    );
     --text-preset-one: 600 4rem/1.1 "Inter";
     --text-preset-two: 600 3rem/1.1 "Inter";
     --text-preset-three: 600 2rem/1.1 "Inter";
@@ -62,6 +66,18 @@ body {
 main {
     max-width: 1600px;
     margin-inline: auto;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 .calculator {
@@ -124,7 +140,7 @@ main {
     row-gap: 1.5rem;
     background: var(--white);
     border-radius: 1rem;
-    box-shadow: 1rem 2rem 3.5rem 0 #8FAECF40;
+    box-shadow: 1rem 2rem 3.5rem 0 #8faecf40;
     flex: 1;
 }
 
@@ -379,7 +395,7 @@ main {
     row-gap: 1rem;
     background: var(--white);
     border-radius: 1rem;
-    box-shadow: 1rem 2rem 3.5rem 0 #8FAECF40;
+    box-shadow: 1rem 2rem 3.5rem 0 #8faecf40;
 }
 
 .limitations__title {
@@ -396,8 +412,6 @@ main {
     font: var(--text-preset-six);
     color: var(--gray-500);
 }
-
-
 
 .visually-hidden {
     position: absolute;
@@ -418,7 +432,6 @@ main {
 .imperial {
     display: none;
 }
-
 
 @media screen and (min-width: 40rem) {
     .calculation__measures {
@@ -471,10 +484,10 @@ main {
 
     .limitations__list {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 
-        "gender gender age age"
-        "muscle muscle pregnancy pregnancy"
-        "...    race   race      ...";
+        grid-template-areas:
+            "gender gender age age"
+            "muscle muscle pregnancy pregnancy"
+            "...    race   race      ...";
     }
 
     .gender {
@@ -557,9 +570,8 @@ main {
         row-gap: 3rem;
     }
 
-
     .limitations__info {
-        max-width: min(34rem, 37vw);   
+        max-width: min(34rem, 37vw);
         position: absolute;
     }
 
@@ -581,9 +593,10 @@ main {
         max-width: 60rem;
         grid-template-columns: repeat(10, 1fr);
         grid-template-areas:
-        "...       ...       ...       ...       ...  gender gender gender gender ...   "
-        "...       ...       age       age       age  age    muscle muscle muscle muscle"
-        "pregnancy pregnancy pregnancy pregnancy race race   race   race   ...    ...   ";
+            "...       ...       ...       ...       ...  gender gender gender gender ...   "
+            "...       ...       age       age       age  age    muscle muscle muscle muscle"
+            "pregnancy pregnancy pregnancy pregnancy race race   race   race   ...    ...   ";
+        padding-block-end: 5.125rem;
     }
 
     .limitations__list--item {
