@@ -15,6 +15,8 @@ const pound = document.getElementById("pound");
 const empty = document.getElementById("empty");
 const active = document.getElementById("active");
 const result = document.getElementById("result");
+
+const activeDescription = document.getElementById("active-description");
 const healthStatus = document.getElementById("status");
 const range = document.getElementById("range");
 
@@ -77,13 +79,13 @@ const handleCalculationFormInput = (e) => {
             const metricBMI =
                 Math.round((kilogramValue / (totalMeters * totalMeters)) * 10) /
                 10;
+            const currentHealth = healthState(metricBMI);
             const from = Math.round(18.5 * Math.pow(totalMeters, 2) * 10) / 10;
             const to = Math.round(24.9 * Math.pow(totalMeters, 2) * 10) / 10;
 
             // change output
             result.innerText = metricBMI;
-            healthStatus.innerText = healthState(metricBMI);
-            range.innerText = `${from}kgs to ${to}kgs`;
+            activeDescription.innerHTML = `Your BMI suggests you're ${currentHealth}. Your ideal weight is between <strong>${from}kgs to ${to}kgs</strong>`;
             renderOutput(true);
         } else {
             renderOutput(false);
@@ -107,6 +109,8 @@ const handleCalculationFormInput = (e) => {
                     703 * (totalPounds / (totalInches * totalInches)) * 10
                 ) / 10;
 
+            const currentHealth = healthState(imperialBMI);
+
             const from =
                 Math.round((18.5 / 703) * Math.pow(totalInches, 2) * 10) / 10;
             const to =
@@ -114,8 +118,7 @@ const handleCalculationFormInput = (e) => {
 
             // change output
             result.innerText = imperialBMI;
-            healthStatus.innerText = healthState(imperialBMI);
-            range.innerText = `${from}lbs to ${to}lbs`;
+            activeDescription.innerHTML = `Your BMI suggests you're ${currentHealth}. Your ideal weight is between <strong>${from}lbs to ${to}lbs</strong>`;
             renderOutput(true);
         } else {
             renderOutput(false);

@@ -191,7 +191,7 @@
                                     your BMI result here
                                 </p>
                             </div>
-                            <div id="active" class="active">
+                            <div id="active" class="active" aria-labelledby="">
                                 <div class="active__result">
                                     <span class="active__result--description">
                                         Your BMI is...
@@ -200,17 +200,12 @@
                                         id="result"
                                         class="active__result--value"
                                     >
-                                        22.0
                                     </span>
                                 </div>
-                                <p class="active__description">
-                                    Your BMI suggests you're
-                                    <span id="status" class="status"></span>.
-                                    Your ideal weight is between
-                                    <span id="range" class="range"
-                                        >9st 6lbs - 12st 10lbs.</span
-                                    >
-                                </p>
+                                <p
+                                    id="active-description"
+                                    class="active__description"
+                                ></p>
                             </div>
                         </output>
                     </form>
