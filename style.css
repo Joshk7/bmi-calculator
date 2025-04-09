@@ -68,6 +68,10 @@ main {
     margin-inline: auto;
 }
 
+input {
+    outline-color: var(--blue-500);
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -78,6 +82,40 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.875rem;
+    height: 1.875rem;
+    border: 0.05rem solid black;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]:checked {
+    border: none;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1.5rem 1.5rem var(--blue-500);
+    border: 0.5rem solid var(--blue-100);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
 }
 
 .calculator {
