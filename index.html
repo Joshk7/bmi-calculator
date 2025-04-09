@@ -22,7 +22,7 @@
     <body>
         <main>
             <div class="calculator__gradient"></div>
-            <section class="calculator">
+            <section class="calculator" aria-label="calculator-header">
                 <img
                     class="logo"
                     src="/assets/images/logo.svg"
@@ -30,7 +30,7 @@
                 />
                 <div class="calculator__wrapper">
                     <div class="calculator__info">
-                        <h1 class="calculator__header">
+                        <h1 id="calculator-header" class="calculator__header">
                             Body Mass Index Calculator
                         </h1>
                         <p class="calculator__description">
@@ -41,8 +41,15 @@
                             evaluate your overall health and well-being.
                         </p>
                     </div>
-                    <form id="calculation" class="calculation">
-                        <span class="calculation__header">
+                    <form
+                        id="calculation"
+                        class="calculation"
+                        aria-label="calculation-header"
+                    >
+                        <span
+                            id="calculation-header"
+                            class="calculation__header"
+                        >
                             Enter your details below
                         </span>
                         <div class="calculation__buttons">
