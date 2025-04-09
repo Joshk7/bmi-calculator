@@ -472,6 +472,11 @@ input[type="radio"]:checked::before {
 }
 
 @media screen and (min-width: 40rem) {
+    .calculation {
+        padding: 2rem;
+        row-gap: 2rem;
+    }
+
     .calculation__measures {
         flex-direction: row;
     }
@@ -578,6 +583,10 @@ input[type="radio"]:checked::before {
 
     .calculator__description {
         text-align: start;
+    }
+
+    .active__result--value {
+        font: var(--text-preset-one);
     }
 
     .info {
